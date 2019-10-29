@@ -2,6 +2,8 @@ Forked from: https://github.com/ckeditor/ckeditor5-build-classic
 
 Here the ckeditor.js is modified with the **simple upload adapter**:
 
+Below are the modifications of the src/ckeditor.js file which were made by me:
+
 ```javascript
 import SimpleUploadAdapter from '@ckeditor/ckeditor5-upload/src/adapters/simpleuploadadapter';   
 
@@ -16,9 +18,9 @@ ClassicEditor.defaultConfig = {
 };
 
 ```
-then I build the file with: `yarn run build`
+then build the file with: `yarn run build`
 
-After I build the bundle I included it in my project.
+After the bundle is created, include it in your project.
 
 This repository contains a link to a sample node-js backend server which handles the image upload on localhost.
 
