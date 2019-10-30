@@ -6,15 +6,36 @@ Below are the modifications of the src/ckeditor.js file which were made by me:
 
 ```javascript
 import SimpleUploadAdapter from '@ckeditor/ckeditor5-upload/src/adapters/simpleuploadadapter';   
+// for image resizing
+import ImageResize from '@ckeditor/ckeditor5-image/src/imageresize';
 
-ClassicEditor.builtinPlugins = [ /* ... */, SimpleUploadAdapter];
+ClassicEditor.builtinPlugins = [ /* ... */, 
+SimpleUploadAdapter,
+ImageResize
+];
 
 // Editor configuration.
 ClassicEditor.defaultConfig = {
 	/*... */ ,
 	simpleUpload: {
 		uploadUrl: 'http://localhost:3001/upload'
-	}
+	},
+	/* for image positioning */
+		image: {
+		toolbar: [
+			'imageTextAlternative',
+			'|',
+			'imageStyle:alignLeft',
+			'imageStyle:full',
+			'imageStyle:alignRight',
+		],
+		styles: [
+			'full',
+			'alignLeft',
+			'alignRight'
+		]
+	},
+
 };
 
 ```
